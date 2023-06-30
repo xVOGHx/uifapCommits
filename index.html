@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input class="test" type="text">
+    <button class="teste">CALCULAR</button>
+    <h1>
+
+    </h1>
+    <script>
+        let n2 = document.querySelector(".test");
+        let n = 5 
+        let div = document.querySelector("h1");
+        let button = document.querySelector(".teste");
+        button.addEventListener("click", ()=> {
+            let calculo = n * n2.value
+    
+            console.log(calculo)
+            div.append(calculo)
+            
+        })
+        
+    </script>
+</body>
+</html>
