@@ -1,0 +1,6 @@
+(arrAy)
+item.push (colocar um item no fim)
+item.pop(remover item do fim)
+item.unshift(coloca um item no começo)
+item.shift(remover item do fim)
+
