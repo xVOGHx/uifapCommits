@@ -4,3 +4,24 @@ item.pop(remover item do fim)
 item.unshift(coloca um item no começo)
 item.shift(remover item do fim)
 
+numeros[3]<numeros[4]
+console.log("o numero maior é", numeros[0])
+
+(let numeros = [3, 7, 5, 35, 2]
+let maior = 0;
+
+for(let numero of numeros){  
+     let temporaria = numero;  
+     if(temporaria > maior){ 
+        maior = temporaria; 
+        console.log(maior)
+     }
+}
+
+for(let i = 0; i < numeros.length; i++){
+    console.log(numeros[i]);
+}
+
+for(let numero of numeros){  
+    console.log(numero)
+})
