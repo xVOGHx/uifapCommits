@@ -1,13 +1,6 @@
-let numeros = [3, 1, 5, 35, 2]
-let menor_num;
-for(let atual; atual>numeros.length; atual++){
-    if (menor_num === undefined){
-        menor_num = numeros[atual]   
-        console.log(atual)
-    }if(menor_num<numeros[atual]){
-        menor_num = numeros[atual]
-        console.log(atual)
-    }
-    console.log(menor_num)
- 
-}
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+const result = words.filter(word => word.length > 6);
+
+console.log(result);
+// Expected output: Array ["exuberant", "destruction", "present"]
