@@ -1,6 +1,12 @@
-const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+function parOuImpar(num){
+    if (num % 2 === 0){
+        return "par"
+    }else{
+        return "impar"
+    }
+}
+console.log(parOuImpar(3))
 
-const result = words.filter(word => word.length > 6);
-
-console.log(result);
-// Expected output: Array ["exuberant", "destruction", "present"]
+var numbers = [1,56,78,32,45];
+var sum = 0; 
+for(var i =0;i<numbers. length;i++){ sum+=numbers[i]; }
