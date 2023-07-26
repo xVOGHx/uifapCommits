@@ -1,12 +1,19 @@
-function parOuImpar(num){
-    if (num % 2 === 0){
-        return "par"
-    }else{
-        return "impar"
-    }
-}
-console.log(parOuImpar(3))
+let altura = 1.80;
+let peso = 100.00;
+let indice = peso / (altura * altura);
+let total = indice.toFixed(1);
+console.log(total);
 
-var numbers = [1,56,78,32,45];
-var sum = 0; 
-for(var i =0;i<numbers. length;i++){ sum+=numbers[i]; }
+if (total <= 18.5) {
+    console.log("o seu indice de massa corporal é de:", total, "voce se encaixa no nível de magreza");
+} else if (total >= 18.6 && total <= 24.9) {
+    console.log("o seu indice de massa corporal é de:", total, "voce se encaixa em um nível normal");
+} else if (total >= 25.0 && total <= 29.9) {
+    console.log("o seu indice de massa corporal é de:", total, "voce se encaixa no nível de sobrepeso");
+} else if (total >= 30.0 && total <= 39.9) { 
+    console.log("o seu indice de massa corporal é de:", total, "voce se encaixa no nível de obesidade");
+} else if (total >= 40.0) {
+    console.log("o seu indice de massa corporal é de:", total, "voce se encaixa no nível de obesidade grave");
+} else {
+    console.log("digite um valor válido");
+}
