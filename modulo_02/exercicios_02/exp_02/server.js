@@ -18,9 +18,3 @@ app.post("/usuarios", (req, res) => {
     const idade = req.body;
     usuarios.push(idade);
 })
-
-if(idade >= 18){
-    res.send("maior de idade");
-}else if(idade < 18){
-    res.send("de menor");
-}
