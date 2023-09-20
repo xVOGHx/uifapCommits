@@ -25,7 +25,21 @@ app.post("/registar", async (req, res) => {
 })
 
 app.post("/login", async (req, res) => {
-
+    const {nome, senha} = req.body;
+    const usuario = await prisma.usuario.findFirst({
+        where: {nome} 
+    })
+    if(!usuario){
+        res.status(404).json({error: "Usuario não existe"})
+    }
+    const pSenha = usuario.senha;
+    bcrypt.compare(senha, pSenha).then((match) => {
+        if(!match){
+            res.json({error: "Senha incorreta"});
+        } else {
+            res.json("Logged In");
+        }
+    })
 })
 
 app.post("/perfil", async (req, res) => {
