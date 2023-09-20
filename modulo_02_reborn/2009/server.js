@@ -2,10 +2,12 @@ const  express = require("express");
 const {PrismaClient} = require("@prisma/client");
 const coockieParser = require("cookie-parser");
 const bcrypt = require("bcrypt");
+const {createTokens, validaToken} = require("./JWT")
 
 const app = express();
-
 app.use(express.json());
+
+app.use(coockieParser());
 const prisma = new PrismaClient();
 
 app.post("/registar", async (req, res) => {
@@ -37,13 +39,17 @@ app.post("/login", async (req, res) => {
         if(!match){
             res.json({error: "Senha incorreta"});
         } else {
+            const acessToken = createTokens(usuario);
+            res.cookie("acess-token", acessToken, {
+                httpOnly: false
+            })
             res.json("Logged In");
         }
     })
 })
 
-app.post("/perfil", async (req, res) => {
-    res.json("Login")
+app.get("/perfil", validaToken ,(req, res) => {
+    res.json("entrou no perfil")
 })
 app.listen(8080, () => {
     console.log("rodando na porta 8080")
